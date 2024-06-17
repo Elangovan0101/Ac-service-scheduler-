@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Service Schedule Result</title>
+</head>
+<body>
+    <h1>ACs to be Serviced per Day</h1>
+    {% for line in output %}
+        <p>{{ line }}</p>
+    {% endfor %}
+
+    <h2>Debug Information</h2>
+    <ul>
+        {% for key, value in debug_info.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

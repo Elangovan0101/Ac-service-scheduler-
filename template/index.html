@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Service Scheduler</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.jpg" alt="Logo" width="150">
+    </div>
+    <h1>AC Service Scheduler</h1>
+    <form action="/generate" method="POST">
+        <label for="year">Enter the year:</label><br>
+        <input type="number" id="year" name="year" min="2022" max="2100" value="2025"><br><br>
+
+        <label for="total_acs">Enter total number of ACs:</label><br>
+        <input type="number" id="total_acs" name="total_acs" min="1" value="50"><br><br>
+
+        <label for="max_ac_per_day">Enter max ACs serviced per day:</label><br>
+        <input type="number" id="max_ac_per_day" name="max_ac_per_day" min="1" value="20"><br><br>
+
+        <input type="submit" value="Generate Schedule">
+    </form>
+</body>
+</html>
+
