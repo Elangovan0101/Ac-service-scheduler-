@@ -49,7 +49,7 @@ The AC Service Scheduler effectively automates the planning of AC maintenance se
 This scheduler can be used by HVAC companies to plan their maintenance schedules efficiently, ensuring no overlap and balanced workload for their technicians.
 
 ## How to Run the Project 🚀
-1. Clone the repository.
+1. Clone the repository. https://github.com/Elangovan0101/Ac-service-scheduler-.git
 2. Install the required dependencies using `pip install -r requirements.txt`.
 3. Run the Streamlit application with `streamlit run app.py`.
 4. Open the generated URL in your web browser to use the AC Service Scheduler.
