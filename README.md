@@ -56,6 +56,9 @@ The Equipment Service Scheduler effectively automates the planning of maintenanc
 ### Practical Application 🌐
 This scheduler can be used by various service companies to plan their maintenance schedules efficiently, ensuring no overlap and balanced workload for their technicians.
 
+### View Demo 📽️
+You can view a live demo of the deployed app [here](https://service-scheduler-wisdomsoft.streamlit.app/).
+
 ### How to Run the Project 🚀
 
 1. Clone the repository: `(https://github.com/Elangovan0101/Service-scheduler.git)`
@@ -68,5 +71,4 @@ This project is licensed under the MIT License.
 
 
 
-![AC Service Scheduler](https://media.istockphoto.com/id/1267057581/photo/a-repairman-checking-the-air-conditioner.jpg?s=612x612&w=0&k=20&c=jsx63zh_etUL0QALeDZNLeE6yIA3bA2xqsv-bRtFBXM=)
 
