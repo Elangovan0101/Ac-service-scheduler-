@@ -2,7 +2,6 @@ import streamlit as st
 import datetime
 from collections import defaultdict
 
-# Function to get the number of days in a month
 def days_in_month(year, month):
     if month == 12:
         next_year = year + 1
@@ -12,8 +11,6 @@ def days_in_month(year, month):
         next_month = month + 1
     last_day_of_month = datetime.date(next_year, next_month, 1) - datetime.timedelta(days=1)
     return last_day_of_month.day
-
-# Function to get the starting months based on the service frequency
 def get_starting_months(frequency):
     if frequency == 'Monthly':
         return list(range(1, 12 + 1))
@@ -27,7 +24,6 @@ def get_starting_months(frequency):
         return [1]
     return []
 
-# Function to schedule services for each interval based on frequency
 def schedule_service(year, total_units, max_units_per_day, week_off_days, start_months, service_frequency, available_staff, persons_per_unit):
     schedule = defaultdict(list)
     unit_index = 0
@@ -52,8 +48,7 @@ def schedule_service(year, total_units, max_units_per_day, week_off_days, start_
                 if unit_index >= total_units:
                     break
             current_date += datetime.timedelta(days=1)
-    
-    # Calculate future service dates based on the frequency
+  
     additional_schedule = defaultdict(list)
     if service_frequency != 'Monthly':
         interval_months = {
@@ -70,7 +65,7 @@ def schedule_service(year, total_units, max_units_per_day, week_off_days, start_
                 if next_service_date.year == year:
                     additional_schedule[next_service_date].extend(current_units)
     else:
-        # Monthly scheduling
+      
         for date in list(schedule.keys()):
             current_units = schedule[date]
             next_date = date
@@ -82,7 +77,6 @@ def schedule_service(year, total_units, max_units_per_day, week_off_days, start_
     
     schedule.update(additional_schedule)
 
-    # Ensure every day of the year is covered
     all_days_schedule = defaultdict(list)
     for month in range(1, 13):
         days_in_current_month = days_in_month(year, month)
@@ -97,30 +91,25 @@ def schedule_service(year, total_units, max_units_per_day, week_off_days, start_
 
 def main():
     st.title('Service Scheduler')
-  
-    # Add your logo image
+
     st.image("logo.jpg", width=150)
     
-    # Dropdown for selecting equipment type
+
     equipment_types = ['Split AC', 'PACKAGE UNIT AC', 'Pest Control']
     equipment_type = st.selectbox('Select type of equipment/service', equipment_types)
-    
-    # User inputs
+  
     year = st.number_input('Enter the year', min_value=2022, max_value=2100, value=2025)
     total_units = st.number_input(f'Enter total number of {equipment_type}s', min_value=1, value=50)
     persons_per_unit = st.number_input(f'Enter number of persons required to service one {equipment_type}', min_value=1, value=2)
     hours_per_unit = st.number_input(f'Enter number of hours required to service one {equipment_type}', min_value=1.0, value=1.0)
     available_staff = st.number_input('Enter the number of available staff', min_value=1, value=10)
     working_hours_per_day = 10  # Average working hours per day
-    
-    # Calculate max units per day based on the inputs
+
     max_units_per_day = int(working_hours_per_day // hours_per_unit)
-    
-    # Service frequency selection
+
     service_frequencies = ['Monthly', 'Quarterly', '4 months once', 'Half-yearly', 'Yearly']
     service_frequency = st.selectbox('Select service frequency', service_frequencies)
-    
-    # Multi-select for week off days without restriction
+
     week_off_days = st.multiselect(
         'Select week off days',
         ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -129,13 +118,11 @@ def main():
     
     week_off_day_indices = [ ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].index(day) for day in week_off_days ]
 
-    # Button to generate schedule
     if st.button('Generate Schedule'):
         # Generate the schedule
         start_months = get_starting_months(service_frequency)
         full_schedule = schedule_service(year, total_units, max_units_per_day, week_off_day_indices, start_months, service_frequency, available_staff, persons_per_unit)
 
-        # Display the schedule
         st.header(f"{equipment_type}s to be Serviced per Day")
         for date, units_list in sorted(full_schedule.items()):
             if date.weekday() in week_off_day_indices:
@@ -145,7 +132,6 @@ def main():
             else:
                 st.write(f"{date}: {len(units_list)} {equipment_type}(s) - {units_list}")
 
-        # Display debug information
         st.subheader("Debug Information")
         st.write(f"Total {equipment_type}s: {total_units}")
         st.write(f"Max {equipment_type}s per day: {max_units_per_day}")
