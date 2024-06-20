@@ -1,6 +1,5 @@
 # Service Scheduler 🌬️📅
-![Service Scheduler][(https://media.istockphoto.com/id/1267057581/photo/a-repairman-checking-the-air-conditioner.jpg?s=612x612&w=0&k=20&c=jsx63zh_etUL0QALeDZNLeE6yIA3bA2xqsv-bRtFBXM=)
-]
+![Service Scheduler](https://goblueox.com/wp-content/uploads/2020/06/Why-Should-I-Schedule-a-Yearly-Heating-and-Air-Conditioning-Maintenance-Visit-_-Minneapolis-MN.jpg)
 ## Equipment Service Scheduler
 
 ### Objective 🎯
