@@ -59,7 +59,7 @@ The Equipment Service Scheduler effectively automates the planning of maintenanc
 This scheduler can be used by various service companies to plan their maintenance schedules efficiently, ensuring no overlap and balanced workload for their technicians.
 
 ### View Demo 📽️
-You can view a live demo of the deployed app [here](https://service-scheduler-wisdomsoft.streamlit.app/).
+You can view a live demo of the deployed app (https://service-scheduler-wisdomsoft.streamlit.app/)
 
 ### How to Run the Project 🚀
 
