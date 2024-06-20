@@ -11,11 +11,12 @@ The primary objective of this project is to create an efficient scheduling syste
 - **Year Selection**: Choose the year for scheduling equipment maintenance.
 - **Total Units**: Enter the total number of equipment units needing service.
 - **Persons per Unit**: Specify the number of persons required to service one unit.
-- **Hours per Unit**: Specify the number of hours required to service one unit.
+- **Minutes per Unit**: Specify the number of minutes required to service one unit.
 - **Available Staff**: Enter the number of available staff.
-- **Daily Service Limit**: Automatically calculated based on available staff, persons per unit, and hours per unit.
+- **Daily Service Limit**: Automatically calculated based on available staff, persons per unit, and minutes per unit.
 - **Week Off Day**: Select a weekly off day to ensure no services are scheduled on that day.
 - **Service Frequency**: Select from Monthly, Quarterly, 4 months once, Half-yearly, or Yearly service intervals.
+- **Working Hours Per Day**: Specify the total number of working hours per day to customize the schedule.
 
 ### Project Summary 📝
 
@@ -27,9 +28,10 @@ The main goal is to automate the scheduling process for equipment maintenance by
 
 #### Key Project Details 🛠️
 - Users can input the total number of equipment units and the number of persons required to service each unit.
-- The app allows setting the number of hours required per unit to calculate the maximum number of services per day.
+- The app allows setting the number of minutes required per unit to calculate the maximum number of services per day.
 - The available staff parameter ensures the scheduling is realistic and manageable.
 - A specific day of the week can be set as an off day to ensure technicians have regular rest days.
+- The user can define the total number of working hours per day to tailor the schedule to their needs.
 
 ### Results 📊
 
@@ -44,7 +46,7 @@ The Equipment Service Scheduler effectively automates the planning of maintenanc
 
 ### Project Execution 📑
 
-1. **User Input**: Collect user inputs for total units, persons per unit, hours per unit, available staff, and weekly off day.
+1. **User Input**: Collect user inputs for total units, persons per unit, minutes per unit, available staff, weekly off day, and working hours per day.
 2. **Schedule Calculation**: Calculate the service schedule based on the provided inputs.
 3. **Display Schedule**: Display the generated schedule in an easy-to-understand format.
 
@@ -68,7 +70,6 @@ You can view a live demo of the deployed app [here](https://service-scheduler-wi
 
 ### License 📜
 This project is licensed under the MIT License.
-
 
 
 
