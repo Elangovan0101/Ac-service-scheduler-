@@ -58,7 +58,7 @@ This scheduler can be used by various service companies to plan their maintenanc
 
 ### How to Run the Project 🚀
 
-1. Clone the repository: `https://github.com/Elangovan0101/Ac-service-scheduler-.git`
+1. Clone the repository: `(https://github.com/Elangovan0101/Service-scheduler.git)`
 2. Install the required dependencies using `pip install -r requirements.txt`.
 3. Run the Streamlit application with `streamlit run app.py`.
 4. Open the generated URL in your web browser to use the Equipment Service Scheduler.
